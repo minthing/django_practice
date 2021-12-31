@@ -4,8 +4,7 @@ from imagekit.models import ProcessedImageField #이미지 처리 관련 기능
 from imagekit.processors import ResizeToFill #이미지 사이즈 관련
 import re #정규표현식
 
-# Create your models here.
-
+#image 확장자
 def user_path(instance, fileName):
   from rendom import choice
   import choice
