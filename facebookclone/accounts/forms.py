@@ -23,7 +23,7 @@ class SignupForm(UserCreationForm):
         fields = UserCreationForm.Meta.fields + ('email',)
     
     def clean_nickname(self):
-        nickname = self.cleaned_data.get('nickname')
+        nickname = self.cleaned_data.get('nickname') #검증에 통과한 값을 사전타입으로 제공 (cleaned_data)
         if Profile.objects.filter(nickname=nickname).exists():
             raise forms.ValidationError('이미 존재하는 닉네임 입니다')
         return nickname
