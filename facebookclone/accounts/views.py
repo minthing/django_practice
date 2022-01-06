@@ -40,4 +40,4 @@ def login_check(request):
 
 def logout(request):
     django_logout(request)
-    return redirect("/")
+    return redirect("/post")
