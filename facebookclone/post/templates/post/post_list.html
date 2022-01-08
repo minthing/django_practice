@@ -8,7 +8,23 @@
 {% block contents %}
 <div id="wrapper">
   <div class="inner">
-    <div class="left_box"></div>
+    <div class="left_box">
+    {% if user_profile %}
+    <div class="my_name">
+      <div class="profile_img"><img src="{{ user_profile.picture.url }}" alt=""></div>
+      <span class="name">{{ user_profile.nickname }}</span>
+      <span class="icon--more"></span>
+  </div>
+  <ul class="list">
+      <li class="active"><a href="{% url 'post:post_list' %}"><span class="icon icon--news"></span>뉴스피드<span class="icon--more"></span></a></li>
+  </ul>
+    {% else %}
+    <div class="my_name">
+      <div class="profile_img"><img src="{% static 'imgs/noun_user.png' %}" alt=""></div>
+      <span class="name">unknown user</span>
+    </div>
+    {% endif %}
+  </div>
     <section class="contents_container"></section>
     <div class="right_box"></div>
   </div>
